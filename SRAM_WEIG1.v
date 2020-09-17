@@ -1,0 +1,226 @@
+module SRAM_WEIG1(
+    clk,
+    re_en,//read enable
+    re_addr_byte,
+    re_addr_img,
+    dout1,dout2,dout3,dout4,dout5,dout6,dout7,dout8,dout9,dout10,dout11,dout12,dout13,dout14,dout15,dout16,dout17,dout18,dout19,dout20,dout21,dout22,dout23,dout24,dout25,dout26,dout27,dout28,dout29,dout30,dout31,dout32,dout33,dout34,dout35,dout36,dout37,dout38,dout39,dout40,dout41,dout42,dout43,dout44,dout45,dout46,dout47,dout48,dout49,dout50,dout51,dout52,dout53,dout54,dout55,dout56,dout57,dout58,dout59,dout60,dout61,dout62,dout63,dout64,dout65,dout66,dout67,dout68,dout69,dout70,dout71,dout72,dout73,dout74,dout75,dout76,dout77,dout78,dout79,dout80,dout81,dout82,dout83,dout84,dout85,dout86,dout87,dout88,dout89,dout90,dout91,dout92,dout93,dout94,dout95,dout96,dout97,dout98
+);
+
+  input clk,re_en;
+  output [15:0] dout1,dout2,dout3,dout4,dout5,dout6,dout7,dout8,dout9,dout10,dout11,dout12,dout13,dout14,dout15,dout16,dout17,dout18,dout19,dout20,dout21,dout22,dout23,dout24,dout25,dout26,dout27,dout28,dout29,dout30,dout31,dout32,dout33,dout34,dout35,dout36,dout37,dout38,dout39,dout40,dout41,dout42,dout43,dout44,dout45,dout46,dout47,dout48,dout49,dout50,dout51,dout52,dout53,dout54,dout55,dout56,dout57,dout58,dout59,dout60,dout61,dout62,dout63,dout64,dout65,dout66,dout67,dout68,dout69,dout70,dout71,dout72,dout73,dout74,dout75,dout76,dout77,dout78,dout79,dout80,dout81,dout82,dout83,dout84,dout85,dout86,dout87,dout88,dout89,dout90,dout91,dout92,dout93,dout94,dout95,dout96,dout97,dout98;
+
+  reg [15:0] dout1,dout2,dout3,dout4,dout5,dout6,dout7,dout8,dout9,dout10,dout11,dout12,dout13,dout14,dout15,dout16,dout17,dout18,dout19,dout20,dout21,dout22,dout23,dout24,dout25,dout26,dout27,dout28,dout29,dout30,dout31,dout32,dout33,dout34,dout35,dout36,dout37,dout38,dout39,dout40,dout41,dout42,dout43,dout44,dout45,dout46,dout47,dout48,dout49,dout50,dout51,dout52,dout53,dout54,dout55,dout56,dout57,dout58,dout59,dout60,dout61,dout62,dout63,dout64,dout65,dout66,dout67,dout68,dout69,dout70,dout71,dout72,dout73,dout74,dout75,dout76,dout77,dout78,dout79,dout80,dout81,dout82,dout83,dout84,dout85,dout86,dout87,dout88,dout89,dout90,dout91,dout92,dout93,dout94,dout95,dout96,dout97,dout98;
+  input [9:0]re_addr_byte;
+  input [7:0]re_addr_img; 
+  //re_addr_byte 1~784 1~200
+  //re_addr_img 1~200 1~10
+
+  reg [15:0]memory_wight1[1:156800];
+  initial begin
+    $readmemb("E:/course/ese461/FinalProject_Chenfeng/layer1_weight_fix.txt",memory_wight1) ;
+	$display("reading weight 1~~@@");
+  end
+
+
+  always @(negedge clk ) begin
+    if (!re_en) begin
+      dout1 <= 16'b0;
+      dout2 <= 16'b0;
+      dout3 <= 16'b0;
+      dout4 <= 16'b0;
+      dout5 <= 16'b0;
+      dout6 <= 16'b0;
+      dout7 <= 16'b0;
+      dout8 <= 16'b0;
+      dout9 <= 16'b0;
+      dout10 <= 16'b0;
+      dout11 <= 16'b0;
+      dout12 <= 16'b0;
+      dout13 <= 16'b0;
+      dout14 <= 16'b0;
+      dout15 <= 16'b0;
+      dout16 <= 16'b0;
+      dout17 <= 16'b0;
+      dout18 <= 16'b0;
+      dout19 <= 16'b0;
+      dout20 <= 16'b0;
+      dout21 <= 16'b0;
+      dout22 <= 16'b0;
+      dout23 <= 16'b0;
+      dout24 <= 16'b0;
+      dout25 <= 16'b0;
+      dout26 <= 16'b0;
+      dout27 <= 16'b0;
+      dout28 <= 16'b0;
+      dout29 <= 16'b0;
+      dout30 <= 16'b0;
+      dout31 <= 16'b0;
+      dout32 <= 16'b0;
+      dout33 <= 16'b0;
+      dout34 <= 16'b0;
+      dout35 <= 16'b0;
+      dout36 <= 16'b0;
+      dout37 <= 16'b0;
+      dout38 <= 16'b0;
+      dout39 <= 16'b0;
+      dout40 <= 16'b0;
+      dout41 <= 16'b0;
+      dout42 <= 16'b0;
+      dout43 <= 16'b0;
+      dout44 <= 16'b0;
+      dout45 <= 16'b0;
+      dout46 <= 16'b0;
+      dout47 <= 16'b0;
+      dout48 <= 16'b0;
+      dout49 <= 16'b0;
+      dout50 <= 16'b0;
+      dout51 <= 16'b0;
+      dout52 <= 16'b0;
+      dout53 <= 16'b0;
+      dout54 <= 16'b0;
+      dout55 <= 16'b0;
+      dout56 <= 16'b0;
+      dout57 <= 16'b0;
+      dout58 <= 16'b0;
+      dout59 <= 16'b0;
+      dout60 <= 16'b0;
+      dout61 <= 16'b0;
+      dout62 <= 16'b0;
+      dout63 <= 16'b0;
+      dout64 <= 16'b0;
+      dout65 <= 16'b0;
+      dout66 <= 16'b0;
+      dout67 <= 16'b0;
+      dout68 <= 16'b0;
+      dout69 <= 16'b0;
+      dout70 <= 16'b0;
+      dout71 <= 16'b0;
+      dout72 <= 16'b0;
+      dout73 <= 16'b0;
+      dout74 <= 16'b0;
+      dout75 <= 16'b0;
+      dout76 <= 16'b0;
+      dout77 <= 16'b0;
+      dout78 <= 16'b0;
+      dout79 <= 16'b0;
+      dout80 <= 16'b0;
+      dout81 <= 16'b0;
+      dout82 <= 16'b0;
+      dout83 <= 16'b0;
+      dout84 <= 16'b0;
+      dout85 <= 16'b0;
+      dout86 <= 16'b0;
+      dout87 <= 16'b0;
+      dout88 <= 16'b0;
+      dout89 <= 16'b0;
+      dout90 <= 16'b0;
+      dout91 <= 16'b0;
+      dout92 <= 16'b0;
+      dout93 <= 16'b0;
+      dout94 <= 16'b0;
+      dout95 <= 16'b0;
+      dout96 <= 16'b0;
+      dout97 <= 16'b0;
+      dout98 <= 16'b0;   
+    end else begin
+      dout1 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+0];
+	    dout2 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+1];
+	    dout3 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+2];
+	    dout4 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+3];
+	    dout5 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+4];
+	    dout6 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+5];
+	    dout7 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+6];
+	    dout8 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+7];
+	    dout9 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+8];
+	    dout10 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+9];
+	    dout11 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+10];
+	    dout12 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+11];
+	    dout13 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+12];
+	    dout14 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+13];
+	    dout15 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+14];
+	    dout16 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+15];
+	    dout17 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+16];
+	    dout18 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+17];
+	    dout19 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+18];
+	    dout20 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+19];
+	    dout21 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+20];
+	    dout22 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+21];
+	    dout23 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+22];
+	    dout24 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+23];
+	    dout25 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+24];
+	    dout26 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+25];
+	    dout27 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+26];
+	    dout28 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+27];
+	    dout29 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+28];
+	    dout30 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+29];
+	    dout31 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+30];
+	    dout32 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+31];
+	    dout33 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+32];
+	    dout34 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+33];
+	    dout35 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+34];
+	    dout36 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+35];
+	    dout37 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+36];
+	    dout38 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+37];
+	    dout39 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+38];
+	    dout40 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+39];
+	    dout41 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+40];
+	    dout42 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+41];
+	    dout43 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+42];
+	    dout44 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+43];
+	    dout45 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+44];
+	    dout46 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+45];
+	    dout47 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+46];
+	    dout48 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+47];
+	    dout49 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+48];
+	    dout50 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+49];
+	    dout51 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+50];
+	    dout52 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+51];
+	    dout53 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+52];
+	    dout54 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+53];
+	    dout55 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+54];
+	    dout56 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+55];
+	    dout57 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+56];
+	    dout58 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+57];
+	    dout59 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+58];
+	    dout60 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+59];
+	    dout61 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+60];
+	    dout62 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+61];
+	    dout63 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+62];
+	    dout64 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+63];
+      dout65 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+64];
+      dout66 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+65];
+      dout67 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+66];
+      dout68 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+67];
+      dout69 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+68];
+      dout70 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+69];
+      dout71 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+70];
+      dout72 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+71];
+      dout73 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+72];
+      dout74 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+73];
+      dout75 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+74];
+      dout76 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+75];
+      dout77 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+76];
+      dout78 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+77];
+      dout79 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+78];
+      dout80 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+79];
+      dout81 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+80];
+      dout82 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+81];
+      dout83 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+82];
+      dout84 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+83];
+      dout85 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+84];
+      dout86 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+85];
+      dout87 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+86];
+      dout88 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+87];
+      dout89 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+88];
+      dout90 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+89];
+      dout91 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+90];
+      dout92 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+91];
+      dout93 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+92];
+      dout94 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+93];
+      dout95 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+94];
+      dout96 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+95];
+      dout97 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+96];
+      dout98 <= memory_wight1[(re_addr_img-1)*784+re_addr_byte+97];
+    end
+  end
+endmodule // SRAM_WEIG1
