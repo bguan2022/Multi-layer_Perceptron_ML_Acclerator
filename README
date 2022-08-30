@@ -1,6 +1,2 @@
 Summary: 
-  The objective is to develop a multi-layer pecetron hardware accelerator. A three-stage pipelined design is impelmented in RTL. The RTL is then synthesized and optiomized through a varity of parameters and the PPA were evaluated. The final deliverable is a GDSII that is capable of running at 100MHz, and has die area of roughly 1mm^2.  
-  
-  
-  
-  
+  The objective is to develop a multi-layer pecetron hardware accelerator. A three-stage pipelined design is impelmented in RTL. The RTL is then synthesized and optiomized through a varity of parameters and the PPA were evaluated. The final deliverable is a GDSII that is capable of running at 100MHz, and has die area of roughly 1mm^2. This is a proof-of-concept study to investigate the area and power comsumption at running at different clock speeds.
