@@ -1,0 +1,6 @@
+Summary: 
+  The objective is to develop a multi-layer pecetron hardware accelerator. A three-stage pipelined design is impelmented in RTL. The RTL is then synthesized and optiomized through a varity of parameters and the PPA were evaluated. 
+  
+  
+  
+  
